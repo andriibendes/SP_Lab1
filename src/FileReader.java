@@ -14,7 +14,7 @@ public class FileReader {
             int max_length = 30;
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                String[] words = line.split("[, ?\".@;:/()$#^~`^!'\\\\%*\\-+=()_\n&<>{}\\]\\[]+");
+                String[] words = line.split("[^a-zA-Z]+");
                 for (String word : words) {
                     if (word.length() > max_length){
                         word = word.substring(0, max_length);
